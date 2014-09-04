@@ -1,3 +1,5 @@
+apply plugin: 'marytts-voicebuilding'
+
 voice {
     name 'dfki-spike-hsmm'
     language 'en'
