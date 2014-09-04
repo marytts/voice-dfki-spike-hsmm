@@ -1,0 +1,15 @@
+voice {
+    name 'dfki-spike-hsmm'
+    language 'en'
+    region 'GB'
+    gender 'male'
+    type 'hsmm'
+    description 'temporary'
+    samplingRate 16000
+}
+
+license {
+    name 'temporary'
+    shortName 'temporary'
+    url 'temporary'
+}
