@@ -4,12 +4,12 @@ voice {
     region 'GB'
     gender 'male'
     type 'hsmm'
-    description 'temporary'
+    description 'A male British English hidden semi-Markov model voice'
     samplingRate 16000
 }
 
 license {
-    name 'temporary'
-    shortName 'temporary'
-    url 'temporary'
+    name 'Creative Commons Attribution-NoDerivs 3.0 Unported'
+    shortName 'CC-BY-ND'
+    url 'http://creativecommons.org/licenses/by-nd/3.0/'
 }
