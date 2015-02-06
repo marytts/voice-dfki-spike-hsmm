@@ -2,13 +2,3 @@ apply plugin: 'de.dfki.mary.voicebuilding'
 
 group 'de.dfki.mary'
 version '5.1.2'
-
-voice {
-    name 'dfki-spike-hsmm'
-    language 'en'
-    region 'GB'
-    gender 'male'
-    type 'hsmm'
-    description 'A male British English hidden semi-Markov model voice'
-    samplingRate 16000
-}
