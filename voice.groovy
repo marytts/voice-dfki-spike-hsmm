@@ -1,7 +1,9 @@
 voice {
     name = 'dfki-spike-hsmm'
-    language = 'en'
-    region = 'GB'
+    locale {
+        language = 'en'
+        country = 'GB'
+    }
     gender = 'male'
     type = 'hsmm'
     description = 'A male British English hidden semi-Markov model voice'
