@@ -1,18 +1,10 @@
 # Gradle
-.gradle/
 build/
+.gradle/
 
 # IDEA
 .idea/
 *.iml
 
-# Eclipse
-.classpath
-.project
-.settings/
-
 # OSX
 .DS_Store
-
-# MaryTTS
-log/
