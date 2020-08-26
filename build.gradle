@@ -1,57 +1,57 @@
 plugins {
-    id 'de.dfki.mary.voicebuilding-base' version '5.2.2'
+    id 'de.dfki.mary.voicebuilding-base' version '5.5-SNAPSHOT'
 }
 
 group 'de.dfki.mary'
 version '5.3-SNAPSHOT'
 
-voice {
-    name = 'dfki-spike-hsmm'
-    language = 'en'
-    region = 'GB'
-    gender = 'male'
-    type = 'hsmm'
-    description = 'A male British English hidden semi-Markov model voice'
-    license {
-        name = 'Creative Commons Attribution-NoDerivs 3.0 Unported'
-        shortName = 'CC-BY-ND'
-        url = 'http://mary.dfki.de/download/by-nd-3.0.html'
+marytts {
+    voice {
+        name = 'dfki-spike-hsmm'
+        language = 'en'
+        region = 'GB'
+        gender = 'male'
+        type = 'hsmm'
+        description = 'A male British English hidden semi-Markov model voice'
+        license {
+            name = 'Creative Commons Attribution-NoDerivs 3.0 Unported'
+            shortName = 'CC-BY-ND'
+            url = 'http://mary.dfki.de/download/by-nd-3.0.html'
+        }
+        samplingRate = 16000
     }
-    samplingRate = 16000
 }
 
-afterEvaluate {
-    generateVoiceConfig {
-        config << [
-                alpha               : 0.42,
-                gamma               : 0,
-                logGain             : false,
-                beta                : 0.2,
-                Ftd                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-dur.inf',
-                Ftf                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-lf0.inf',
-                Ftm                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-mgc.inf',
-                Fts                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-str.inf',
-                Fmd                 : 'jar:/marytts/voice/DfkiSpikeHsmm/dur.pdf',
-                Fmf                 : 'jar:/marytts/voice/DfkiSpikeHsmm/lf0.pdf',
-                Fmm                 : 'jar:/marytts/voice/DfkiSpikeHsmm/mgc.pdf',
-                Fms                 : 'jar:/marytts/voice/DfkiSpikeHsmm/str.pdf',
-                useGV               : true,
-                maxMgcGvIter        : 100,
-                maxLf0GvIter        : 100,
-                Fgvf                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-lf0-littend.pdf',
-                Fgvm                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-mgc-littend.pdf',
-                Fgvs                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-str-littend.pdf',
-                FeaFile             : 'jar:/marytts/voice/DfkiSpikeHsmm/spi001.pfeats',
-                trickyPhonesFile    : 'jar:/marytts/voice/DfkiSpikeHsmm/trickyPhones.txt',
-                useMixExc           : true,
-                Fif                 : 'jar:/marytts/voice/DfkiSpikeHsmm/mix_excitation_filters.txt',
-                in                  : 5,
-                useAcousticModels   : true,
-                acousticModels      : 'duration F0',
-                'duration.model'    : 'hmm',
-                'duration.attribute': 'd',
-                'F0.model'          : 'hmm',
-                'F0.attribute'      : 'f0'
-        ]
-    }
+generateVoiceConfig {
+    config.putAll([
+            alpha               : 0.42,
+            gamma               : 0,
+            logGain             : false,
+            beta                : 0.2,
+            Ftd                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-dur.inf',
+            Ftf                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-lf0.inf',
+            Ftm                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-mgc.inf',
+            Fts                 : 'jar:/marytts/voice/DfkiSpikeHsmm/tree-str.inf',
+            Fmd                 : 'jar:/marytts/voice/DfkiSpikeHsmm/dur.pdf',
+            Fmf                 : 'jar:/marytts/voice/DfkiSpikeHsmm/lf0.pdf',
+            Fmm                 : 'jar:/marytts/voice/DfkiSpikeHsmm/mgc.pdf',
+            Fms                 : 'jar:/marytts/voice/DfkiSpikeHsmm/str.pdf',
+            useGV               : true,
+            maxMgcGvIter        : 100,
+            maxLf0GvIter        : 100,
+            Fgvf                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-lf0-littend.pdf',
+            Fgvm                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-mgc-littend.pdf',
+            Fgvs                : 'jar:/marytts/voice/DfkiSpikeHsmm/gv-str-littend.pdf',
+            FeaFile             : 'jar:/marytts/voice/DfkiSpikeHsmm/spi001.pfeats',
+            trickyPhonesFile    : 'jar:/marytts/voice/DfkiSpikeHsmm/trickyPhones.txt',
+            useMixExc           : true,
+            Fif                 : 'jar:/marytts/voice/DfkiSpikeHsmm/mix_excitation_filters.txt',
+            in                  : 5,
+            useAcousticModels   : true,
+            acousticModels      : 'duration F0',
+            'duration.model'    : 'hmm',
+            'duration.attribute': 'd',
+            'F0.model'          : 'hmm',
+            'F0.attribute'      : 'f0'
+        ])
 }
